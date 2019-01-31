@@ -112,7 +112,7 @@ public class PageVo {
         if (isNowFirst) {
             this.setPrevPageNo(1); // 이전 페이지 번호
         } else {
-            this.setPrevPageNo(((pageNo - 1) < 1 ? 1 : (pageNo - 1))); // 이전 페이지 번호
+            this.setPrevPageNo(((pageNo - 5) < 1 ? 1 : (pageNo - 5))); // 이전 페이지 번호
         }
  
         this.setStartPageNo(startPage); // 시작 페이지 (페이징 네비 기준)
@@ -121,7 +121,7 @@ public class PageVo {
         if (isNowFinal) {
             this.setNextPageNo(finalPage); // 다음 페이지 번호
         } else {
-            this.setNextPageNo(((pageNo + 1) > finalPage ? finalPage : (pageNo + 1))); // 다음 페이지 번호
+            this.setNextPageNo(((pageNo + 5) > finalPage ? finalPage : (pageNo + 5))); // 다음 페이지 번호
         }
  
         this.setFinalPageNo(finalPage); // 마지막 페이지 번호
