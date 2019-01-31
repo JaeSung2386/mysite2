@@ -121,7 +121,11 @@ public class PageVo {
         if (isNowFinal) {
             this.setNextPageNo(finalPage); // 다음 페이지 번호
         } else {
-            this.setNextPageNo(((pageNo + 5) > finalPage ? finalPage : (pageNo + 5))); // 다음 페이지 번호
+        	if(pageNo % 5 != 1) {
+        		this.setNextPageNo(((startPage + 5) > finalPage ? finalPage : (startPage + 5))); // 다음 페이지 번호
+        	} else {
+        		this.setNextPageNo(((pageNo + 5) > finalPage ? finalPage : (pageNo + 5))); // 다음 페이지 번호
+        	}
         }
  
         this.setFinalPageNo(finalPage); // 마지막 페이지 번호

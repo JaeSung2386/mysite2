@@ -76,8 +76,10 @@
 				<!-- pager 추가 -->
 				<div class="pager">
 					<ul>
+						<c:if test ="${pagevo.pageNo > 5 }">	
 						<li><a href="${pageContext.servletContext.contextPath }/board?page=${pagevo.firstPageNo}">◀◀</a></li>
 						<li><a href="${pageContext.servletContext.contextPath }/board?page=${pagevo.prevPageNo}">◀</a></li>
+						</c:if>
 							<c:forEach var="i" begin="${pagevo.startPageNo }" end="${pagevo.endPageNo }" step="1">
 								<c:choose>
 									<c:when test="${i eq pagevo.pageNo }">
@@ -87,7 +89,7 @@
 										<li><a href="${pageContext.servletContext.contextPath }/board?page=${i}">${i}</a></li>
 									</c:otherwise>
 								</c:choose>
-							</c:forEach>		
+							</c:forEach>
 						<li><a href="${pageContext.servletContext.contextPath }/board?page=${pagevo.nextPageNo}">▶</a></li>
 						<li><a href="${pageContext.servletContext.contextPath }/board?page=${pagevo.finalPageNo}">▶▶</a></li>
 					</ul>
