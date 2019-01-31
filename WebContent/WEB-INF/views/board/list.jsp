@@ -81,7 +81,7 @@
 							<c:forEach var="i" begin="${pagevo.startPageNo }" end="${pagevo.endPageNo }" step="1">
 								<c:choose>
 									<c:when test="${i eq pagevo.pageNo }">
-										<li><a href="${pageContext.servletContext.contextPath }/board?page=${i}">${i}</a></li>
+										<li class="selected"><a href="${pageContext.servletContext.contextPath }/board?page=${i}">${i}</a></li>
 									</c:when>
 									<c:otherwise>
 										<li><a href="${pageContext.servletContext.contextPath }/board?page=${i}">${i}</a></li>
