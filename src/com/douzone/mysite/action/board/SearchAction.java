@@ -20,7 +20,7 @@ public class SearchAction implements Action {
 		String kwd = request.getParameter("kwd");
 		String search = request.getParameter("search");
 		int page = request.getParameter("page") == null ? 1 : Integer.parseInt(request.getParameter("page"));
-
+	
 		BoardDao dao = new BoardDao();
 		List<BoardVo> list = null;
 		
@@ -28,7 +28,8 @@ public class SearchAction implements Action {
 		pagevo.setPageNo(page);
 		pagevo.setPageSize(10);
 		
-		if(kwd == null) {
+		//키워드 파라미타가 없거나 아무 값도 입력안하고 검색했을 경우
+		if(kwd == null || kwd == "") {
 			pagevo.setTotalCount(dao.getTotalCount());
 			page = (page - 1) * 10;
 			list = dao.getList(page, pagevo.getPageSize());

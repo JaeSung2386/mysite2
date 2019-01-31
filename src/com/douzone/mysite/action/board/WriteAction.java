@@ -19,6 +19,13 @@ public class WriteAction implements Action {
 		String title = request.getParameter("title");
 		String contents = request.getParameter("contents");
 		
+		if(title == "") {
+			title = "[제목없음]";
+		}
+		if(contents == "") {
+			contents = "[내용없음]";
+		}
+		
 		BoardVo vo = new BoardVo();
 		vo.setUser_no(Long.parseLong(user_no));
 		vo.setTitle(title);
